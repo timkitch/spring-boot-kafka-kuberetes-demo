@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: spring-boot-kafka-kuberetes-demo
+  name: spring-boot-kafka-kuberetes-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-boot-kafka-kuberetes-demo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: spring-boot-kafka-kuberetes-demo
+    spec:
+      containers:
+      - image: docker.io/javacloudintegrator/spring-boot-kafka-kuberetes-demo
+        name: spring-boot-kafka-kuberetes-demo
+        resources: {}
+status: {}

@@ -1,0 +1,19 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: spring-boot-kafka-kuberetes-demo
+  
+spec:
+  template:
+    metadata:
+      name: spring-boot-kafka-kuberetes-demo
+      # annotations:
+      #   # the minimum number of pods to scale down to
+      #   autoscaling.knative.dev/minScale: "1"
+      #   # the maximum number of pods to scale up to
+      #   autoscaling.knative.dev/maxScale: "1"
+    spec:
+      selector:
+        app: spring-boot-kafka-kuberetes-demo
+      containers:
+        - image: javacloudintegrator/spring-boot-kafka-kuberetes-demo

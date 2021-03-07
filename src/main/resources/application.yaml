@@ -1,0 +1,19 @@
+server:
+  port: 9999
+
+jci:
+  kafka-group-id: jci-test-group
+  kafka-topic: jci-test-topic
+
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: my-cluster-kafka-bootstrap:9092
+      group-id: jci-test-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: my-cluster-kafka-bootstrap:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
